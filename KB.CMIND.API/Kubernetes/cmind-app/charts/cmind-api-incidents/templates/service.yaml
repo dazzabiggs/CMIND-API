@@ -3,13 +3,12 @@ kind: Service
 metadata:
   name: {{ include "cmind-api-incidents.fullname" . }}
   labels:
-    {{- include "cmind-api-incidents.labels" . | nindent 4 }}
+    name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+    - nodePort: {{ .Values.service.nodePort }}
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
   selector:
-    {{- include "cmind-api-incidents.selectorLabels" . | nindent 4 }}
+    app: {{ .Release.Name }}-{{ .Chart.Name }}

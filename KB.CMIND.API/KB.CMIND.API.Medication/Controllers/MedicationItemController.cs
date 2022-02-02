@@ -13,7 +13,6 @@ namespace KB.CMIND.API.Medication.Controllers
 {
     [Authorize(Roles = "Medication")]
     [Route("api/v1/medication/item")]
-    [Route("api/[controller]")]
     [ApiController]
     public class MedicationItemController : ControllerBase
     {

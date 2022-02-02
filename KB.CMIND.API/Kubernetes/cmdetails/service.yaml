@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+apiVersion: v1
+metadata:
+  name: cmdetails-service
+spec:
+  selector:
+    app: cmdetails
+  type: NodePort
+  ports:
+    #- name: cmdetails-port
+    - nodePort: 30100
+      port: 8080
+      targetPort: 80

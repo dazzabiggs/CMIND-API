@@ -6,7 +6,7 @@ using System.Transactions;
 
 namespace KB.CMIND.API.Incidents.Controllers
 {
-    [Authorize(Roles = "Incident")]
+    [Authorize(Roles = "Incidents")]
     [Route("api/v1/incident")]
     [ApiController]
     public class IncidentController : ControllerBase
